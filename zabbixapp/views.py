@@ -9,6 +9,7 @@ from pprint import pprint
 from .zabbixtools import ZabbixApi
 import configparser, os
 
+
 proDir = os.path.dirname(os.path.realpath(__file__))
 print(proDir)
 configPath = os.path.join(proDir, "configs.txt")
