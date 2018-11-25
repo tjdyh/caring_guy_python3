@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zabbix模板列表</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>模板ID</th>
+            <th>模板名</th>
+            <th>模板状态(0代表使用中)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in template_list %}
+        <tr>
+            <td>{{ item.templateid }}</td>
+            <td>{{ item.host }}</td>
+            <td>{{ item.status }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

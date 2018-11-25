@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zabbix主机组列表</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>主机组ID</th>
+            <th>主机组名</th>
+            <th>主机组状态</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in hostgroup_list %}
+        <tr>
+            <td>{{ item.groupid }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.flags }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
