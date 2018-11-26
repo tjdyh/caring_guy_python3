@@ -17,8 +17,7 @@ class ZabbixApi():
 
     # 获取登录权限id
     def user_login(self):
-        data = json.dumps(
-            {
+        data = {
                 "jsonrpc": "2.0",
                 "method": "user.login",
                 "params": {
@@ -27,8 +26,8 @@ class ZabbixApi():
                 },
                 "id": 0
             }
-        )
-        data=data.encode('utf-8')
+        data=json.dumps(data).encode('utf-8')
+        pprint(data)
         request = urllib.request.Request(self.url, data)
         # pprint(request)
         for key in self.header:
@@ -76,8 +75,7 @@ class ZabbixApi():
         '''
         通过zabbix API获取主机列表
         '''
-        data = json.dumps(
-            {
+        data = {
                 "jsonrpc": "2.0",
                 "method": "host.get",
                 "params": {
@@ -87,8 +85,7 @@ class ZabbixApi():
                 "auth": self.authID,
                 "id": 1
             }
-        )
-        data=data.encode('utf-8')
+        data=json.dumps(data).encode('utf-8')
         # pprint(data)
         # res = self.get_data(data)['result']
         res = self.get_data(data)
@@ -102,8 +99,7 @@ class ZabbixApi():
         '''
         通过zabbix API获取模板列表
         '''
-        data = json.dumps(
-            {
+        data = {
                 "jsonrpc":"2.0",
                 "method":"template.get",
                 "params":{
@@ -112,8 +108,7 @@ class ZabbixApi():
                 "auth":self.authID,
                 "id":1,
             }
-        )
-        data = data.encode('utf-8')
+        data = json.dumps(data).encode('utf-8')
         # res = self.get_data(data)['result']
         res = self.get_data(data)
         # pprint(res)
@@ -123,8 +118,7 @@ class ZabbixApi():
         '''
         通过zabbix API 获取主机组列表
         '''
-        data = json.dumps(
-            {
+        data = {
                 "jsonrpc":"2.0",
                 "method":"hostgroup.get",
                 "params":{
@@ -133,8 +127,7 @@ class ZabbixApi():
                 "auth":self.authID,
                 "id":1,
             }
-        )
-        data = data.encode('utf-8')
+        data = json.dumps(data).encode('utf-8')
         res = self.get_data(data)
         # res = json.loads(res)
         # pprint(res)
@@ -150,8 +143,7 @@ class ZabbixApi():
         if hostid == 0:
             print("This host cannot find in zabbix,please check it !")
             sys.exit()
-        data = json.dumps(
-            {
+        data = {
                 "jsonrpc":"2.0",
                 "method": "host.delete",
                 "params":[
@@ -160,8 +152,7 @@ class ZabbixApi():
                 "auth":self.authID,
                 "id":1
             }
-        )
-        data=data.encode('utf-8')
+        data=json.dumps(data).encode('utf-8')
         # pprint(data)
         res = self.get_data(data)
         # pprint(res)
@@ -193,8 +184,7 @@ class ZabbixApi():
             # pprint(t_list)
         # pprint(hostip)
         if hostip and groupid and templateid:
-            data = json.dumps(
-                {
+            data = {
                     "jsonrpc":"2.0",
                     "method":"host.create",
                     "params":{
@@ -215,8 +205,7 @@ class ZabbixApi():
                     "auth": self.authID,
                     "id": 1,
                 }
-            )
-            data = data.encode('utf-8')
+            data = json.dumps(data).encode('utf-8')
             # pprint(data)
             res = self.get_data(data)
             # pprint(res)
