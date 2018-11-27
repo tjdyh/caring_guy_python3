@@ -1,45 +1,32 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
 <head>
-    <title>运维平台</title>
-    {% load staticfiles %}
-    <link type="text/css" href="{% static 'zabbixapps/css/style.css' %}" rel="stylesheet"/>
-{#    <link type="text/css" href="/static/css/style.css" rel="stylesheet"/>#}
-{#    <script src="{% static 'js/alert.js' %}"></script>#}
+    <meta charset="utf-8">
+    <title>{{ site_name }}</title>
+    <meta name="keywords" content="{{ site_name }}"/>
+    <meta name="description" content="{{ site_desc }}"/>
+{#    <link href='{% static "zabbixapps/css/base.css" %}' rel="stylesheet">#}
+    <link type="text/css" href="{% static 'zabbixapps/css/index.css' %}" rel="stylesheet">
+    {% block customer_css %}{% endblock %}
+{#    <script type="text/javascript" src='{% static "jquery/jquery-3.1.1.js" %}'></script>#}
+{#    <script type="text/javascript" src='{% static "base/js/sliders.js" %}'></script>#}
+    {% block customer_js %}{% endblock %}
 </head>
-{#<body onload="message()">#}
 <body>
-<div id="container">
-<div id="header">
-    <h1>运维平台</h1>
-</div>
-<div id="nav">
-    <ul>
-        <li>项目1</li>
-        <li>项目2</li>
-    </ul>
-</div>
-<div id="section">
-    {#<p><a href="http://127.0.0.1:8000/echarts">Echarts图表</a><br />#}
-    <p><a href="{% url 'echarts' %}">Echarts图表</a><br/>
-        echarts图表用于运维平台统计数据展现</p>
-    <hr/>
-    <p><a href="{% url 'host' %}">zabbix监控主机列表</a><br/>
-        展示目前ZABBIX监控中的主机列表</p>
-    <hr/>
-    <p><a href="{% url 'hostgroup' %}">zabbix监控主机组</a><br/>
-        展示目前ZABBIX监控中的主机组列表</p>
-    <hr/>
-{#    <p><a href="{% url 'create' %}">添加被监控主机</a><br/>#}
-{#        添加新的被监控主机，默认监控端口为10050</p>#}
-{#    <hr/>#}
-{#    <p><a href="{% url 'delete' %}">删除被监控主机</a><br/>#}
-{#        删除被监控主机</p>#}
-</div>
-
-<div id="footer">
-    Copyright @blg
-</div>
-</div>
+<header>
+    {% include "main/header.html" %}
+</header>
+<article>
+    <div class="l_box f_l">
+        {% include "main/ad.html" %}
+        <!-- banner代码 结束 -->
+        {% block content %}{% endblock %}
+    </div>
+    {% include "main/right.html" %}
+</article>
+<footer>
+    {% include "main/footer.html" %}
+</footer>
 </body>
 </html>

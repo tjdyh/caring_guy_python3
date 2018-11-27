@@ -38,7 +38,7 @@ class ZabbixApi():
         except Exception as e:
             print("Auth Failed, Please Check Your Name And Password:", e)
         else:
-            response = json.loads(result.read())
+            response = json.loads(result.read().decode('utf-8'))
             # pprint(response)
             result.close()
             authID = response['result']
@@ -63,7 +63,7 @@ class ZabbixApi():
                 print('Error code: ', e.code)
             return 0
         else:
-            response = json.loads(result.read())
+            response = json.loads(result.read().decode('utf-8'))
             # pprint(type(response))
             if 'result' in response.keys():
                 response = response['result']

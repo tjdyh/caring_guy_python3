@@ -10,7 +10,10 @@ p
 #container{
 
 }
-#header {
+
+#header_header {
+    width: 372px;
+    height: 90px;
     background-color: black;
     color: white;
     text-align: center;
