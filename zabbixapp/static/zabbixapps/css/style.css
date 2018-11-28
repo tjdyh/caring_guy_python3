@@ -1,41 +1,41 @@
 @charset "utf-8";
 
-body{
+#box{
     background-color: transparent;
-    color: black;
-    text-align: left;
-    padding: 50px;
+}
+
+#header_css{
+    height: 100px;
+    width: auto;
+    text-align: center;
+    background-color: aqua;
+    /*padding: 5px;*/
 }
 
 div.left {
     height: 500px;
-    width: 25%;
+    width: 220px;
     float: left;
+    background-color: chartreuse;
+    /*padding: 5px;*/
 }
 
 div.l_box {
     height: 500px;
-    width: 75%;
-    float: left;
+    margin-left: 220px;
+    background-color: aquamarine;
+    /*padding: 5px;*/
 }
 
 #mid_con {
     width: auto;
     height: 500px;
-    border-color: aqua;
+    /*padding: 5px;*/
 }
 
-#footer {
-    background-color: black;
-    color: white;
-    clear: both;
-    text-align: center;
-    padding: 5px;
-}
-
-#header_css {
-    height: 90px;
+footer{
     width: auto;
-    font-size: 40px;
-    font-style: italic;
+    height: 110px;
+    padding: 5px;
+    background-color: bisque;
 }
