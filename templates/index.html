@@ -1,32 +1,39 @@
 {% load staticfiles %}
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>{{ site_name }}</title>
-    <meta name="keywords" content="{{ site_name }}"/>
-    <meta name="description" content="{{ site_desc }}"/>
-{#    <link href='{% static "zabbixapps/css/base.css" %}' rel="stylesheet">#}
-    <link type="text/css" href="{% static 'zabbixapps/css/index.css' %}" rel="stylesheet">
-    {% block customer_css %}{% endblock %}
-{#    <script type="text/javascript" src='{% static "jquery/jquery-3.1.1.js" %}'></script>#}
-{#    <script type="text/javascript" src='{% static "base/js/sliders.js" %}'></script>#}
-    {% block customer_js %}{% endblock %}
-</head>
-<body>
-<header>
-    {% include "main/header.html" %}
-</header>
-<article>
-    <div class="l_box f_l">
-        {% include "main/ad.html" %}
-        <!-- banner代码 结束 -->
-        {% block content %}{% endblock %}
-    </div>
-    {% include "main/right.html" %}
-</article>
-<footer>
-    {% include "main/footer.html" %}
-</footer>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ site_name }}</title>
+        <meta name="keywords" content="{{ site_name }}"/>
+        <meta name="description" content="{{ site_desc }}"/>
+        <link type="text/css" href='{% static "zabbixapps/css/style.css" %}' rel="stylesheet">
+        {% block customer_css %}{% endblock %}
+    {#    <script type="text/javascript" src='{% static "jquery/jquery-3.1.1.js" %}'></script>#}
+    {#    <script type="text/javascript" src='{% static "base/js/sliders.js" %}'></script>#}
+        {% block customer_js %}{% endblock %}
+    </head>
+
+    <body>
+        <!--头部-->
+        <header id="header_css">
+            {% include "main/header.html" %}
+        </header>
+
+        <!--内容-->
+        <article id="mid_con">
+            <div class="left">
+                {% include "main/right.html" %}
+            </div>
+            <div class="l_box">
+                {% include "main/ad.html" %}
+                <!-- banner代码 结束 -->
+                {% block content %}{% endblock %}
+            </div>
+        </article>
+
+
+        <footer>
+            {% include "main/footer.html" %}
+        </footer>
+    </body>
 </html>
