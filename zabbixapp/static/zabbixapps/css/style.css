@@ -6,8 +6,9 @@
 
 #header_css{
     height: 100px;
-    width: auto;
-    text-align: center;
+    width: 1120px;
+    text-align: left;
+    line-height: 100px;
     background-color: aqua;
     /*padding: 5px;*/
 }
@@ -28,13 +29,13 @@ div.l_box {
 }
 
 #mid_con {
-    width: auto;
+    width: 1120px;
     height: 500px;
     /*padding: 5px;*/
 }
 
 footer{
-    width: auto;
+    width: 1120px;
     height: 110px;
     padding: 5px;
     background-color: bisque;
