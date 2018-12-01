@@ -27,11 +27,13 @@ class ZabbixApi():
                 "id": 0
             }
         data=json.dumps(data).encode('utf-8')
-        pprint(data)
+        # pprint(data)
         request = urllib.request.Request(self.url, data)
         # pprint(request)
         for key in self.header:
+            # pprint(key)
             request.add_header(key, self.header[key])
+        # pprint(request)
         try:
             result = urllib.request.urlopen(request)
             # pprint(result)

@@ -8,8 +8,11 @@ from pprint import pprint
 
 from .zabbixtools import ZabbixApi
 import configparser, os
+import json
 
-
+########################################################################
+#由配置文件引入所需变量值
+########################################################################
 proDir = os.path.dirname(os.path.realpath(__file__))
 print(proDir)
 configPath = os.path.join(proDir, "configs.txt")
@@ -20,14 +23,18 @@ cp.read(configPath)
 url=cp.get('zabbix1', 'zabbix_url')
 user=cp.get('zabbix1', 'zabbix_user')
 password=cp.get('zabbix1', 'zabbix_pass')
+header=cp.get('zabbix1', 'zabbix_header')
 
+#将str转为dict
+header=json.loads(header)
+# print(header)
 # pprint(url, user)
 
 # Create your views here.
-# url = "http://zabbix.51eanj.com/zabbix/api_jsonrpc.php"
-header = {"Content-Type": "application/json"}
+# url = "http://xxxxx/zabbix/api_jsonrpc.php"
+# header = {"Content-Type": "application/json"}
 # user = "Admin"
-# password = "Yaj@2018"
+# password = ""
 host = ZabbixApi(url, header, user, password)
 
 def get_host(request):
