@@ -35,6 +35,9 @@ header=json.loads(header)
 # header = {"Content-Type": "application/json"}
 # user = "Admin"
 # password = ""
+x_data_list=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+y_data_list=[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 120.0, 6.4, 3.3]
+
 host = ZabbixApi(url, header, user, password)
 
 def get_host(request):
@@ -54,7 +57,9 @@ def get_hostgroup(request):
     return render(request, 'zabbixapps/hostgroup_list.html', {'hostgroup_list': hostgroup_list})
 
 def echarts(request):
-    return render(request,'echarts.html')
+    # info_dict={'x_data_list': x_data_list,'y_data_list': y_data_list}
+    # return render(request,'echarts.html', {'info_dict': info_dict})
+    return render(request,'echarts.html', {'x_data_list': x_data_list, 'y_data_list': y_data_list})
 
 def index(request):
     return render(request, 'index.html')
