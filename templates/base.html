@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}默认标题{% endblock %} - 自强学习</title>
+{% block headcss %}
+<link rel="stylesheet" type="text/css" href="/static/zabbixapps/css/index.css">
+<link rel="stylesheet" type="text/css" href="/static/zabbixapps/css/style.css">
+{% endblock %}
 </head>
 <body>
+{% block bodytop %}
+<div id="top">
+{% block nav %}
+{% include 'main/header.html' %}
+{% endblock %}
 
-{% include 'nav.html' %}
+<div id="left">
+    {% block left %}
+{% include 'main/left.html' %}
+{% endblock %}
+</div>
+<div id="1_box">
 {% block content %}
     <div>这里是默认内容，所有继承自这个模板的，如果不覆盖就显示这里的内容。</div>
 {% endblock %}
-
+</div>
+{% endblock %}<!-- end block bodytop -->
 {% include 'bottom.html' %}
 
+</div>
 {% include 'tongji.html' %}
 
 </body>
