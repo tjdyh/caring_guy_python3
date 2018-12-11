@@ -1,5 +1,5 @@
 [zabbix1]
-zabbix_url=http://xxxxxxx/zabbix/api_jsonrpc.php
+zabbix_url=http://zabbix.51eanj.com/zabbix/api_jsonrpc.php
 zabbix_user=Admin
-zabbix_pass=
+zabbix_pass=Eaj20191qaz
 zabbix_header={"Content-Type": "application/json"}
