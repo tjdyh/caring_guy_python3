@@ -4,38 +4,43 @@
 
 #header_css{
     height: 100px;
-    width: 1120px;
+    width: auto;
     text-align: left;
     line-height: 100px;
-    background-color: aqua;
+    border-style: solid;
+    /*background-color: aqua;*/
     /*padding: 5px;*/
 }
 
-#left {
+div.left {
     height: 500px;
     width: 220px;
     float: left;
-    background-color: chartreuse;
+    border-style: solid;
+    /*background-color: chartreuse;*/
     /*padding: 5px;*/
 }
 
-#l_box {
+div.l_box {
     height: 500px;
+    width: available;
     margin-left: 220px;
-    background-color: aquamarine;
+    border-style: solid;
+    /*background-color: aquamarine;*/
     /*padding: 5px;*/
 }
 
 #mid_con {
-    width: 1120px;
-    height: 500px;
+    width: auto;
+    height: 75%;
     /*padding: 5px;*/
 }
 
-footer{
-    width: 1120px;
+#footer{
+    width: auto;
     height: 110px;
     padding: 5px;
-    background-color: bisque;
+    border-style: solid;
+    /*background-color: bisque;*/
 }
 
